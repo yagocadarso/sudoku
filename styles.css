@@ -1,0 +1,62 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 45%;
+    margin: 0 auto;
+  }
+  
+  .containercito {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  
+  .box {
+    width: 200px;
+    height: 200px;
+    background-color: grey;
+    border: 5px solid black;
+    box-sizing: border-box;
+    margin: 5px;
+  }
+  
+  .minibox {
+    width: 63.33px;
+    height: 63.33px;
+    background-color: white;
+    border: 1px solid black;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    padding: 0;
+    color: blue;
+  }
+  
+  .minibox.fixed {
+    color: black;
+    background-color: white;
+  }
+  
+  .button {
+    text-align: center;
+  }
+  
+  .numbers {
+    text-size: 25px;
+  }
+  
+  
+  .correct {
+    background-color: #b0e8b0; 
+    color: #000000;
+  }
+  
+  .wrong {
+    background-color: #ff9999; 
+    color: #ff0000; 
+  }
+  
