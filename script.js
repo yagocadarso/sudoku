@@ -186,10 +186,9 @@ function actualizarCronometro() {
   if (tiempoRestante < 0) {
     // Detener el cronómetro
     clearInterval(cronometroInterval);
-    // Mostrar un mensaje de tiempo agotado
+    // tiempo agotado
     cronometroElemento.textContent = "Tiempo agotado";
-    // Realizar cualquier acción adicional necesaria
-    // ...
+    
   }
 }
 
