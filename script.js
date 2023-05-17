@@ -157,4 +157,41 @@ for (let i = 0; i < inputBoxes.length; i++) {
   }
 }
 
-// compruebo que mis input coinciden con mis respuestas
+
+// Definir el tiempo límite en minutos
+const tiempoLimiteMinutos = 5;
+
+// Calcular el tiempo límite en milisegundos
+const tiempoLimiteMilisegundos = tiempoLimiteMinutos * 60 * 1000;
+
+// Obtener el elemento HTML para mostrar el cronómetro
+const cronometroElemento = document.getElementById('cronometro');
+
+// Inicializar el tiempo restante al tiempo límite
+let tiempoRestante = tiempoLimiteMilisegundos;
+
+// Función para actualizar el cronómetro
+function actualizarCronometro() {
+  // Calcular los minutos y segundos restantes
+  const minutos = Math.floor(tiempoRestante / 60000);
+  const segundos = Math.floor((tiempoRestante % 60000) / 1000);
+
+  // Mostrar el tiempo restante en el elemento HTML del cronómetro
+  cronometroElemento.textContent = `Tiempo restante: ${minutos}:${segundos.toString().padStart(2, '0')}`;
+
+  // Restar 1 segundo al tiempo restante
+  tiempoRestante -= 1000;
+
+  // Verificar si se ha alcanzado el tiempo límite
+  if (tiempoRestante < 0) {
+    // Detener el cronómetro
+    clearInterval(cronometroInterval);
+    // Mostrar un mensaje de tiempo agotado
+    cronometroElemento.textContent = "Tiempo agotado";
+    // Realizar cualquier acción adicional necesaria
+    // ...
+  }
+}
+
+// Actualizar el cronómetro cada segundo
+const cronometroInterval = setInterval(actualizarCronometro, 1000);
